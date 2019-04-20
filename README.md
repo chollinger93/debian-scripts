@@ -5,6 +5,7 @@ Just a collection of scripts I use on my `Debian` servers
 ```
 git clone (url)
 cd debian-scripts
+chmod +x *.sh
 ```
 
 ## Usage

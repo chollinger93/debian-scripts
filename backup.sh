@@ -1,4 +1,5 @@
 #!/bin/sh
+source ./package_installed.sh
 export GPG_KEY="YOUR_KEY_HERE"
 SHARE="/mnt/shares/6TB-Server"
 SERVER="192.168.1.213"
@@ -8,7 +9,12 @@ if [ "${EUID}" -ne 0 ]; then
 	echo "You're not root"
 exit
 fi
-    
+# Checking dependencies
+isInstalled "duplicity"
+if [[ $? -ne 0 ]]; then
+	exit 1
+fi
+
 # Check if external drive is mounted
 if [[ -z $(mount -t cifs | grep "${SHARE}") ]]; then
 	echo "Disk not connected, trying mount"
