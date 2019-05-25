@@ -28,6 +28,14 @@ Downloads a video from YouTube and stores it as mp3.
 
 Arguments: `youtube.sh URL ARTIST SONG`, structures files as such and sets id3 tags.
 
+Because YT is being weird, I've added a 4th argument that expects a path to a valid MP3 file. That one only sets the ID3 tags and moves it accordingly.
+
+Sample (I actually own the physical CD, this is just for demonstration)  -
+```
+scp hildebrandslied.mp3 christian@bigiron:/home/christian
+./youtube.sh "https://www.youtube.com/watch?v=... "Hildebrandslied "/home/christian/hildebrandslied.mp3"
+```
+
 ### `.bashrc`
 My `.bashrc`. I use zsh, but the appended lines are almost identical.
 
