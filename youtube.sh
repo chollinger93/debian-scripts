@@ -6,7 +6,7 @@ SONG=$3
 SKIP_YT_FILE=$4
 TARGET="${MUSIC_PATH}/${ARTIST}/"
 source ./package_installed.sh
-if [ $# -le 3 ]; then
+if [ $# -le 2 ]; then
 	>&2 echo "Wrong arguments, usage \$URL \$ARTST \$SONG"
 	exit 1
 fi
