@@ -6,8 +6,9 @@ SONG=$3
 SKIP_YT_FILE=$4
 TARGET="${MUSIC_PATH}/${ARTIST}/"
 source ./package_installed.sh
+source ./logging.sh
 if [ $# -le 2 ]; then
-	>&2 echo "Wrong arguments, usage \$URL \$ARTST \$SONG"
+	logErr "Wrong arguments, usage \$URL \$ARTST \$SONG"
 	exit 1
 fi
 # Checking dependencies
@@ -21,28 +22,39 @@ if [[ $? -ne 0 ]]; then
 fi
 # Update youtube-dl
 pip install --upgrade pip --user
-pip install youtube-dl --user
-if [[ $? -ne 0 ]]; then
-	echo "Something went wrong when updating" >&2
+#pip install youtube-dl --user
+youtubedl=$(youtube-dl --version)
+log "youtube-dl is in version ${youtubedl}; if you encounter issues, please check"
+log "https://github.com/ytdl-org/youtube-dl/blob/master/README.md#how-do-i-update-youtube-dl"
+
+# Trying update
+if [[ $(id -u) -ne 0 ]]; then
+	logWarn "Can't run youtube-dl update, you are not root - and probably shouldn't be. Please try:"
+	logWarn "sudo youtube-dl -U"
+else 
+	youtube-dl -U
+	if [[ $? -ne 0 ]]; then
+		logWarn "Couldn't update youtube-dl"
+	fi
 fi
 
-echo "Creating ${TARGET}"
+log "Creating ${TARGET}"
 mkdir -p "${TARGET}"
 if [[ ! -z $4 ]]; then
-	echo "Skipping youtube, weirdo... (cp $4 to ${SONG}.mp3)"
+	log "Skipping youtube, weirdo... (cp $4 to ${SONG}.mp3)"
 	cp "${4}" "${SONG}.mp3"
-	if [[ $? -ne 0 ]]; then echo "Yeah, that worked out greaaaaaat. Param \$4 is the MP3 name if you want to skip the YT download." && exit 1; fi
+	if [[ $? -ne 0 ]]; then logErr "Yeah, that worked out greaaaaaat. Param \$4 is the MP3 name if you want to skip the YT download." && exit 1; fi
 else
 	youtube-dl --verbose --extract-audio --audio-format "mp3" -o "${SONG}" --audio-quality 0 --prefer-ffmpeg  --output "${SONG}.%(ext)s"  "${URL}"
 fi
 if [ $? -ne 0 ]; then
-	>&2 echo "Download failed!"
+	logErr "Download failed!"
 fi
 
-echo "Creating Id3 Tags..."
+log "Creating Id3 Tags..."
 id3v2 "${SONG}.mp3" -a "${ARTIST}"
 id3v2 "${SONG}.mp3" -t "${SONG}"
 
-echo "Moving ${SONG}.mp3 to ${TARGET}"
+log "Moving ${SONG}.mp3 to ${TARGET}"
 mv "${SONG}.mp3" "${TARGET}"
-echo "Done"
+log "Done"
