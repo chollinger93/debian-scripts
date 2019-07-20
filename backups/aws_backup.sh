@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./package_installed.sh
+source ../util/package_installed.sh
 export PASSPHRASE=YOUR_PASSPHRASE
 export AWS_ACCESS_KEY_ID=YOUR_AWS_KEY
 export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
