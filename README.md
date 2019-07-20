@@ -1,7 +1,25 @@
 # Debian-scripts
 Just a collection of scripts I use on my `Debian` servers. Technically run some on `Arch` and `CentOS`, but whot's counting?
 
-## Overview
+## Structure
+
+```
+|-- backups
+|   |-- aws_backup.sh
+|   |-- backup.sh
+|-- dotfiles
+|-- media
+|   |-- mp3_id3.sh
+|   |-- youtube.sh
+|-- util
+    |-- create_random_files.sh
+    |-- logging.sh
+    |-- mount_drive.sh
+    |-- package_installed.sh
+```
+
+## Backups
+Scripts to backup things.
 
 ### `aws_backup.sh`
 Backs up a server to Amazon AWS S3 using duplicity. Needs an AWS account w/ billing enabled, a valid gnupgp key, and duplicity installed.
@@ -13,6 +31,9 @@ Backs up a GNU/Linux machine over smb, e.g. to a home server.
 
 Similar to `aws_backup.sh`, only locally. Requires similar adjustments and software.
 
+## Util
+Random utilities
+
 ### `create_random_files.sh`
 Creates random files. Useful for testing e.g., user quotas, disk I/O, or HDFS clusters.
 
@@ -22,6 +43,15 @@ By default, writes to `~/testfiles`. Adjust the bash loop to control the number 
 Checks if a pacakge is installed.
 
 Exports a function, used in the rest of these scripts. Feel free to just `grep` on `apt`, `pacman`, `yum`, ...
+
+### `logging.sh`
+Exports log functions as `log`, `logErr`, `logWarn`
+
+### `mount_drive.sh`
+Mounts an SMB drive using CIFS defaults - I don't add mount drives into `/etc/fstab`
+
+## Media
+Media helpers
 
 ### `youtube.sh`
 Downloads a video from YouTube and stores it as mp3.
@@ -36,10 +66,16 @@ scp hildebrandslied.mp3 christian@bigiron:/home/christian
 ./youtube.sh "https://www.youtube.com/watch?v=... "Hildebrandslied "/home/christian/hildebrandslied.mp3"
 ```
 
+## Dotfiles
+Various configurations
+
 ### `.bashrc`
 My `.bashrc`. I use zsh, but the appended lines are almost identical.
 
 This one wants to live in our `$HOME` directory. I guess you knew that.
+
+## `.zshrc`
+Same story for `zsh`
 
 ## Installation
 ```
@@ -51,7 +87,7 @@ chmod +x *.sh
 For `.bashrc`:
 ```
 cp ~/.bashrc ~/.bashrc.bkp
-cp debian-scripts/.bashrc ~
+cp debian-scripts/dotfiles/.bashrc ~
 source ~/.bashrc
 ```
 

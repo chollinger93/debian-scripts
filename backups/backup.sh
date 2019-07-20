@@ -1,5 +1,5 @@
 #!/bin/sh
-source ./package_installed.sh
+source ../util/package_installed.sh
 export GPG_KEY="YOUR_KEY_HERE"
 SHARE="/mnt/shares/6TB-Server"
 SERVER="192.168.1.213"
