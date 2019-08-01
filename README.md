@@ -77,6 +77,9 @@ This one wants to live in our `$HOME` directory. I guess you knew that.
 ## `.zshrc`
 Same story for `zsh`
 
+## `.oh-my-zsh`
+Customized `robbyrussell` theme for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) with the current machine's name.
+
 ## Installation
 ```
 git clone (url)
