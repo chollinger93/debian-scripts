@@ -1,5 +1,7 @@
 #!/bin/bash
-MUSIC_PATH="/mnt/6TB/Music"
+if [[ -z "${MUSIC_PATH}" ]]; then
+	MUSIC_PATH="/mnt/6TB/Music"
+fi
 URL=$1
 ARTIST=$2
 SONG=$3
