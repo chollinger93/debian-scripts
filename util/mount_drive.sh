@@ -15,5 +15,11 @@ else
 	MOUNTPOINT="/mnt/shares/1TB-Server"
 fi
 
+# Checking credentials
+if [[ ! -f /etc/samba/credentials/share ]]; then
+	logErr "No /etc/samba/credentials/share exists"
+	exit 1
+fi
+
 log "Mounting $SERVER at $MOUNTPOINT"
 mount -t cifs "${SERVER}" "${MOUNTPOINT}" -o credentials=/etc/samba/credentials/share,uid=$(id -u),gid=$(id -g)
