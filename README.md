@@ -82,6 +82,9 @@ Customized `robbyrussell` theme for [oh-my-zsh](https://github.com/robbyrussell/
 
 The theme is otherwise identical; however, if you don't use a custom name, it requires a `git add` and `git commit` before using `upgrade_oh_my_zsh`.
 
+## `.config`
+This directory contains config files for a lot of tools (e.g. `sublime`, `Thunar`, `GIMP`, `Nextcloud`, `VirtualBox`, `plasma`, `pulse`, `gtk`, `chromium`, `i3`), but in this repo, this is used for `neofetch`; it adds a timezone config for the US (EST), Central Europe, and India.
+
 ## Installation
 ```
 git clone (url)
