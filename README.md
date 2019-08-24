@@ -80,6 +80,8 @@ Same story for `zsh`
 ## `.oh-my-zsh`
 Customized `robbyrussell` theme for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) with the current machine's name.
 
+The theme is otherwise identical; however, if you don't use a custom name, it requires a `git add` and `git commit` before using `upgrade_oh_my_zsh`.
+
 ## Installation
 ```
 git clone (url)
