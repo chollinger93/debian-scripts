@@ -31,6 +31,19 @@ Backs up a GNU/Linux machine over smb, e.g. to a home server.
 
 Similar to `aws_backup.sh`, only locally. Requires similar adjustments and software.
 
+### `borg_backup.sh`
+Customized script of the `borg` [docs](https://borgbackup.readthedocs.io/en/stable/quickstart.html#automating-backups) to backup a machine. This is an alternative to `duplicity` I use on some machines.
+
+Setup:
+```
+sudo apt-get install borgbackup 
+borg init user@server:22/path/to/backup -e=repokey
+borg key export user@server:22/path/to/backup ~/borg.key
+chmod 400 ~/borg.key
+```
+
+Run as `sudo`, as it's backup up pretty much the entire system.
+
 ## Util
 Random utilities
 
