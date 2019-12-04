@@ -1,0 +1,4 @@
+.CodeMirror pre, .CodeMirror-dialog, .CodeMirror-dialog .CodeMirror-search-field, .terminal-app .terminal {
+    font-family: fira-code;
+    font-size: 12pt;
+}

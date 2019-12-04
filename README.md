@@ -87,16 +87,19 @@ My `.bashrc`. I use zsh, but the appended lines are almost identical.
 
 This one wants to live in our `$HOME` directory. I guess you knew that.
 
-## `.zshrc`
+### `.zshrc`
 Same story for `zsh`
 
-## `.oh-my-zsh`
+### `.oh-my-zsh`
 Customized `robbyrussell` theme for [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) with the current machine's name.
 
 The theme is otherwise identical; however, if you don't use a custom name, it requires a `git add` and `git commit` before using `upgrade_oh_my_zsh`.
 
-## `.config`
+### `.config`
 This directory contains config files for a lot of tools (e.g. `sublime`, `Thunar`, `GIMP`, `Nextcloud`, `VirtualBox`, `plasma`, `pulse`, `gtk`, `chromium`, `i3`), but in this repo, this is used for `neofetch`; it adds a timezone config for the US (EST), Central Europe, and India.
+
+### `.jupyter`
+A `custom.css` to use different fonts in `jupyter notebooks`. I use [Fira Code](https://github.com/tonsky/FiraCode), which you can get by running `sudo apt install fonts-firacode`.
 
 ## Installation
 ```
