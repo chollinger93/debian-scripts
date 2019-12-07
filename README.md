@@ -101,6 +101,9 @@ This directory contains config files for a lot of tools (e.g. `sublime`, `Thunar
 ### `.jupyter`
 A `custom.css` to use different fonts in `jupyter notebooks`. I use [Fira Code](https://github.com/tonsky/FiraCode), which you can get by running `sudo apt install fonts-firacode`.
 
+### `Code`
+Font settings for Visual Studio Code
+
 ## Installation
 ```
 git clone (url)
