@@ -20,12 +20,12 @@ check_create_venv(){
     if [[ "${VIRTUAL_ENV}" != "" ]]; then
         log "Venv is active!"
     else
-        log "Installing venv!"
+        log "Installing venv in ${rel_path}!"
         cd "${rel_path}"
         python3 -m venv env
-        source env/bin/activate
+        . env/bin/activate
         cd -
-
+        return 1
     fi
     return 0
 }
