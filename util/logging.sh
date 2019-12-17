@@ -5,6 +5,7 @@
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 DEF='\033[0m'
+BLUE='\033[0;34m'
 
 logErr(){
 	local msg="$(date): ${1}"
@@ -19,4 +20,9 @@ logWarn(){
 log(){
 	local msg="$(date): ${1}"
 	echo -e "${NC}${msg}"
+}
+
+logCol(){
+	local msg="$(date): ${1}"
+	echo -e "${BLUE}${msg}${DEF}"
 }
