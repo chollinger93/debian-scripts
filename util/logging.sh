@@ -7,16 +7,16 @@ YELLOW='\033[0;33m'
 DEF='\033[0m'
 
 logErr(){
-	local msg="${1}"
+	local msg="$(date): ${1}"
 	>&2 echo -e "${RED}${msg}${DEF}" 
 }
 
 logWarn(){
-	local msg="${1}"
+	local msg="$(date): ${1}"
 	echo -e "${YELLOW}${msg}${DEF}"
 }
 
 log(){
-	local msg="${1}"
+	local msg="$(date): ${1}"
 	echo -e "${NC}${msg}"
 }

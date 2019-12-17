@@ -1,5 +1,5 @@
 #!/bin/bash
-source ../util/logging.sh
+source ./logging.sh
 if [[ -z $SUDO_USER ]]; then
 	logErr "Script must be called as sudo"
 	exit 1
