@@ -1,5 +1,8 @@
 #!/bin/bash
-source ./logging.sh
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}/logging.sh"
+
 if [[ -z $SUDO_USER ]]; then
 	logErr "Script must be called as sudo"
 	exit 1

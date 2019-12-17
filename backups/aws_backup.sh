@@ -1,5 +1,7 @@
 #!/bin/bash
-source ../util/package_installed.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}/../util/logging.sh"
+source "${DIR}/../util/package_installed.sh"
 export PASSPHRASE=YOUR_PASSPHRASE
 export AWS_ACCESS_KEY_ID=YOUR_AWS_KEY
 export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
@@ -7,7 +9,7 @@ GPG_KEY=YOUR_GPG_KEY
 URL=YOUR_AWS_BUCKET
 
 if [ "${EUID}" -ne 0 ]; then
-        >&2 echo "You're not root"
+        logErr "You're not root"
 	exit 1
 fi
 

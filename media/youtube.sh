@@ -7,8 +7,10 @@ ARTIST=$2
 SONG=$3
 SKIP_YT_FILE=$4
 TARGET="${MUSIC_PATH}/${ARTIST}/"
-source ../util/package_installed.sh
-source ../util/logging.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}/../util/logging.sh"
+source "${DIR}/../util/package_installed.sh"
+
 if [ $# -le 2 ]; then
 	logErr "Wrong arguments, usage \$URL \$ARTST \$SONG"
 	exit 1

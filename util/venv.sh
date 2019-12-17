@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./logging.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}/logging.sh"
 
 check_create_venv(){
     if [[ $# -ge 1 ]]; then

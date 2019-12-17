@@ -1,5 +1,6 @@
 #!/bin/bash
-source ./logging.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}/logging.sh"
 
 # Creates random files 
 ROOT_DIR="/home/${USER}/testfiles/"

@@ -1,12 +1,15 @@
-#!/bin/sh
-source ../util/package_installed.sh
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${DIR}/../util/logging.sh"
+source "${DIR}/../util/package_installed.sh"
+
 export GPG_KEY="YOUR_KEY_HERE"
 SHARE="/mnt/shares/6TB-Server"
 SERVER="192.168.1.213"
 MOUNT="6TB"
 MOUNT_PATH="/mnt/shares/6TB-Server"
 if [ "${EUID}" -ne 0 ]; then
-	echo "You're not root"
+	logErr "You're not root"
 exit
 fi
 # Checking dependencies
