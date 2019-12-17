@@ -15,7 +15,9 @@ check_create_venv(){
     pws=$(cd "${rel_path}" && pwd)
 
     # -z $(echo "${res}" | grep "${pws}")
-    if [[ "${pws}" == *"${res}"*  ]]; then
+    #logErr "Comparing ${res} ${pws}"
+    #if [[ "${pws}" == *"${res}"*  ]]; then
+    if [[ "${VIRTUAL_ENV}" != "" ]]; then
         log "Venv is active!"
     else
         log "Installing venv!"
