@@ -1,0 +1,10 @@
+# For smartmontools
+
+/var/log/smartd/*.csv {
+	compress
+	missingok
+	rotate 30
+	daily
+	size 10M
+	delaycompress
+}	
