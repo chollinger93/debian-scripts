@@ -60,8 +60,15 @@ Exports a function, used in the rest of these scripts. Feel free to just `grep` 
 ### `logging.sh`
 Exports log functions as `log`, `logErr`, `logWarn`
 
+Needs to be sourced.
+
 ### `mount_drive.sh`
 Mounts an SMB drive using CIFS defaults - I don't add mount drives into `/etc/fstab`
+
+### `venv.sh`
+Attempts to determine whether a Python 3 virtual environment exist and creates one if not.
+
+Needs to be sourced.
 
 ## Media
 Media helpers

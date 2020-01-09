@@ -3,6 +3,16 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source "${DIR}/logging.sh"
 
+check_venv(){
+if [[ "${VIRTUAL_ENV}" != "" ]]; then
+        log "Venv is active!"
+	return 0
+    else
+	logWarn "No venv found"
+	return 1
+fi	
+}
+
 check_create_venv(){
     if [[ $# -ge 1 ]]; then
 	    log "Using input path"
@@ -14,10 +24,9 @@ check_create_venv(){
     res=$(pip3 -V)
     pws=$(cd "${rel_path}" && pwd)
 
-    # -z $(echo "${res}" | grep "${pws}")
-    #logErr "Comparing ${res} ${pws}"
-    #if [[ "${pws}" == *"${res}"*  ]]; then
-    if [[ "${VIRTUAL_ENV}" != "" ]]; then
+    check_venv
+    isActive=$?
+    if [[ $isActive -eq 0 ]]; then
         log "Venv is active!"
     else
         log "Installing venv in ${rel_path}!"
