@@ -111,6 +111,9 @@ A `custom.css` to use different fonts in `jupyter notebooks`. I use [Fira Code](
 ### `Code`
 Font settings for Visual Studio Code
 
+### `.vimrc`
+Some `vim` settings for line numbers, highlighting tabs
+
 ## Installation
 ```
 git clone (url)
