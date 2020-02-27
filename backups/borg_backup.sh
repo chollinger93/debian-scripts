@@ -2,11 +2,13 @@
 
 # This is not required for non-root backups
 if [ "${EUID}" -ne 0 ]; then
-	echo "You're not root"
-	exit
+    echo "You're not root"
+    exit
 fi
 
 # Setting this, so the repo does not need to be given on the commandline:
+# Requires `borg init /path/to/repo`
+# See: https://borgbackup.readthedocs.io/en/stable/usage/init.html
 export BORG_REPO=ssh://user@server:port/path/to/backup
 
 # Setting this, so you won't be asked for your repository passphrase:
@@ -40,6 +42,7 @@ borg create                         \
     --exclude '/mnt/*'              \
     --exclude '/sys/*'              \
     --exclude '/opt/virtual/*'      \
+    --exclude '/mnt/*'              \
                                     \
     ::'{hostname}-{now}'            \
     /etc                            \
