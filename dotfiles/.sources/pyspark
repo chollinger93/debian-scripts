@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# SPARK
+export SPARK_HOME=/home/christian/workspace/spark-2.4.5-bin-hadoop2.7
+export PYSPARK_PYTHON=python3
+export PATH=$SPARK_HOME/bin:$PATH

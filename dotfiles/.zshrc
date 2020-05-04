@@ -132,3 +132,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/christian/perl5"; export PERL_MM_OPT;
 # Set vim key bindings
 #set -o vi
 export EDITOR=vim
+
+# Apache Spark/pySpark locally
+source ./.sources/pyspark
