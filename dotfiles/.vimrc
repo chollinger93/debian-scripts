@@ -4,3 +4,6 @@ set listchars=tab:>-
 
 "Line numbers"
 set nu
+
+"Syntax"
+syntax on
