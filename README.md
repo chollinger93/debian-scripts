@@ -52,6 +52,12 @@ Creates random files. Useful for testing e.g., user quotas, disk I/O, or HDFS cl
 
 By default, writes to `~/testfiles`. Adjust the bash loop to control the number of files. Not parallelized - could do that with `&` or `awk` or something like that.
 
+### `create_test_csv.sh`
+
+Creates a testing CSV, e.g. for `pyspark`. Simple `bash` loop again.
+
+Will ask you for a schema, either as `number` or `string` during run.
+
 ### `package_installed.sh`
 Checks if a pacakge is installed.
 
