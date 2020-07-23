@@ -4,18 +4,28 @@ Just a collection of scripts I use on my `Debian` servers. Technically run some 
 ## Structure
 
 ```
-|-- backups
-|   |-- aws_backup.sh
-|   |-- backup.sh
-|-- dotfiles
-|-- media
-|   |-- mp3_id3.sh
-|   |-- youtube.sh
-|-- util
-    |-- create_random_files.sh
-    |-- logging.sh
-    |-- mount_drive.sh
-    |-- package_installed.sh
+├── backups
+│   ├── aws_backup.sh
+│   ├── backup.sh
+│   └── borg_backup.sh
+├── dotfiles
+├── etc
+│   ├── default
+│   │   └── smartmontools
+│   ├── logrotate.d
+│   │   └── smartd
+│   └── pwrstatd-powerfail.sh
+├── media
+│   ├── mp3_id3.sh
+│   └── youtube.sh
+└── util
+    ├── create_random_files.sh
+    ├── create_test_csv.sh
+    ├── logging.sh
+    ├── mount_drive.sh
+    ├── package_installed.sh
+    ├── pihole-dns.sh
+    └── venv.sh
 ```
 
 ## Backups
@@ -119,6 +129,18 @@ Font settings for Visual Studio Code
 
 ### `.vimrc`
 Some `vim` settings for line numbers, highlighting tabs
+
+## `etc`
+Various scripts and configs that belong in, you guessed it, `/etc`.
+
+### `default/smartmontools`
+Configuration for logging SMART values to disk, used with `Netdata`
+
+### `logrotate.d/smartd`
+A `logrotate` config for the same.
+
+### `pwrstatd-powerfail.sh`
+This is used for `pwrstat` for `CyberPower` USPs. See [Arch Wiki](https://wiki.archlinux.org/index.php/CyberPower_UPS).
 
 ## Installation
 ```
