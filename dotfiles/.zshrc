@@ -96,10 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Default alias settings
-alias ll="ls -larth"
-alias c=clear
-
 # FONTS (oh-my-zsh)
 powerline-daemon -q
 . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -135,3 +131,11 @@ export EDITOR=vim
 
 # Apache Spark/pySpark locally
 source ./.sources/pyspark
+
+# Default alias settings
+alias ll="ls -larth"
+alias c=clear
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ip="ip --color=auto"
+alias cdd="cd ../.."
