@@ -1,5 +1,9 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/christian/.oh-my-zsh"
@@ -7,7 +11,8 @@ export ZSH="/home/christian/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="custom-robbyrussell"
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -27,7 +32,7 @@ ZSH_THEME="custom-robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -62,60 +67,20 @@ ZSH_THEME="custom-robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git cp docker docker-compose encode64 gitignore history isodate kubectl pip sbt thefuck vscode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Default alias settings
-alias ll="ls -larth"
-alias c=clear
-
-# FONTS (oh-my-zsh)
-powerline-daemon -q
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
-# NEOFETCH
+# MOTD
 neofetch
 
-# AUDIO
-#pulseaudio --k
-#pulseaudio --start
-
-# SSH
-alias pi="ssh pi@pi.local"
-
+################
 # GCP
-export GOOGLE_APPLICATION_CREDENTIALS=/your/gcp_json_path/google.json
+################
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.creds/google.json
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/christian/google-cloud-sdk/path.zsh.inc' ]; then . '/home/christian/google-cloud-sdk/path.zsh.inc'; fi
@@ -123,15 +88,29 @@ if [ -f '/home/christian/google-cloud-sdk/path.zsh.inc' ]; then . '/home/christi
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/christian/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/christian/google-cloud-sdk/completion.zsh.inc'; fi
 
-PATH="/home/christian/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/christian/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/christian/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/christian/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/christian/perl5"; export PERL_MM_OPT;
+################
+# PATH
+################
+# Go
+export PATH="~/.local/bin/:~/go/bin:${PATH}"
+# Rust
+export PATH="/home/christian/.cargo/bin:${PATH}"
+source $HOME/.cargo/env
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-# Set vim key bindings
-#set -o vi
-export EDITOR=vim
+################
+# ALIASES
+################
+alias ll="ls -larth"
+alias c="clear"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ip="ip --color=auto"
+alias cdd="cd ../.."
+alias ihistory="history -i"
+# SSH
+alias pi="ssh pi@pi.local"
 
-# Apache Spark/pySpark locally
-source ./.sources/pyspark
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
