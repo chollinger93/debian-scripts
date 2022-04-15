@@ -111,6 +111,11 @@ alias cdd="cd ../.."
 alias ihistory="history -i"
 # SSH
 alias pi="ssh pi@pi.local"
+# git
+alias gs="git status"
+alias ga="git add -A"
+alias gc="git commit"
+alias gca="git commit --amend"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
