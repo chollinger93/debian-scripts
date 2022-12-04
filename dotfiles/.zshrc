@@ -109,6 +109,8 @@ alias diff="diff --color=auto"
 alias ip="ip --color=auto"
 alias cdd="cd ../.."
 alias ihistory="history -i"
+alias cat="bat"
+alias cdw="cd ~/workspace"
 # SSH
 alias pi="ssh pi@pi.local"
 # git
