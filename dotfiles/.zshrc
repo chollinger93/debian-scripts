@@ -121,6 +121,7 @@ alias refresh="source ~/.zshrc"
 # Replacement tools
 alias cat="batcat --pager=never"
 alias ll="exa -la"
+alias cdw="cd ~/workspace"
 # git
 alias gs="git status"
 alias ga="git add -A"
