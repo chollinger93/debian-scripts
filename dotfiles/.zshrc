@@ -93,6 +93,13 @@ if [ -f '/home/christian/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/c
 ################
 # Go
 export PATH="~/.local/bin/:~/go/bin:${PATH}"
+# Qt
+export PATH=/usr/lib/qt5/bin:$PATH
+export PATH="$HOME/.poetry/bin:$PATH"
+# Spark
+export PATH="/opt/spark/bin:$PATH"
+export SPARK_HOME="/opt/spark"
+export PATH="/home/christian/.sdkman/bin:$PATH"
 # Rust
 export PATH="/home/christian/.cargo/bin:${PATH}"
 source $HOME/.cargo/env
@@ -109,13 +116,31 @@ alias diff="diff --color=auto"
 alias ip="ip --color=auto"
 alias cdd="cd ../.."
 alias ihistory="history -i"
-# SSH
-alias pi="ssh pi@pi.local"
+alias cdw="cd ~/workspace"
+alias refresh="source ~/.zshrc"
+# Replacement tools
+alias cat="batcat --pager=never"
+alias ll="exa -la"
 # git
 alias gs="git status"
 alias ga="git add -A"
 alias gc="git commit"
 alias gca="git commit --amend"
-
+alias gum="git checkout master && git pull origin master"
+alias guma="git checkout main && git pull origin main"
+# Convert a regular string to a snake_case
+function toSnakeCase(){
+  echo "${1}" | awk '{print tolower($0)}' | sed 's/ /_/g'
+}
+# Servers
+export BIGIRON="bigiron.lan"
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# maven
+export PATH="$PATH:/opt/maven/bin"
+# Flink
+export PATH="$PATH:/opt/flink/latest/bin"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
