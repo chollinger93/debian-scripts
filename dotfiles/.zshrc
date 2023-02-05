@@ -129,6 +129,7 @@ alias gc="git commit"
 alias gca="git commit --amend"
 alias gum="git checkout master && git pull origin master"
 alias guma="git checkout main && git pull origin main"
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 # Convert a regular string to a snake_case
 function toSnakeCase(){
   echo "${1}" | awk '{print tolower($0)}' | sed 's/ /_/g'
