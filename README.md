@@ -22,6 +22,7 @@ Just a collection of scripts I use on my `Debian` servers. Technically run some 
     ├── create_random_files.sh
     ├── create_anybadge.sh
     ├── create_test_csv.sh
+    ├── log_top_cpu.sh
     ├── logging.sh
     ├── mount_drive.sh
     ├── package_installed.sh
@@ -75,6 +76,11 @@ Will ask you for a schema, either as `number` or `string` during run.
 Checks if a pacakge is installed.
 
 Exports a function, used in the rest of these scripts. Feel free to just `grep` on `apt`, `pacman`, `yum`, ...
+
+### `log_top_cpu.sh`
+Logs the top CPU processes as CSV.
+
+Useful as crontab to debug hard-locking servers/VMs.
 
 ### `logging.sh`
 Exports log functions as `log`, `logErr`, `logWarn`
