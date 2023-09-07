@@ -123,7 +123,7 @@ alias refresh="source ~/.zshrc"
 # Replacement tools
 alias cat="batcat --pager=never"
 alias pcat="batcat --pager=never --style=plain"
-alias ll="exa -la"
+alias ll="eza -la"
 alias cdw="cd ~/workspace"
 # git
 alias gs="git status"
