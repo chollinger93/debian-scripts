@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of $HOME/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/christian/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -17,7 +17,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
+# looking in $HOME/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -64,46 +64,41 @@ echo -e "\033];$(hostname)\007"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Which plugins would you like to load? (plugins can be found in $HOME/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git cp docker docker-compose encode64 gitignore history isodate kubectl pip sbt thefuck vscode
 )
 
+################
+# LOGIN
+################
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
 
 # MOTD
 neofetch
 
 ################
-# GCP
+# SYSTEM SETTINGS
 ################
-export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.creds/google.json
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/christian/google-cloud-sdk/path.zsh.inc' ]; then . '/home/christian/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/christian/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/christian/google-cloud-sdk/completion.zsh.inc'; fi
+export EDITOR=vim
 
 ################
 # PATH
 ################
 # Go
-export PATH="~/.local/bin/:~/go/bin:${PATH}"
+export PATH="$HOME/.local/bin/:$HOME/go/bin:${PATH}"
 # Qt
 export PATH=/usr/lib/qt5/bin:$PATH
 export PATH="$HOME/.poetry/bin:$PATH"
 # Spark
 export PATH="/opt/spark/bin:$PATH"
 export SPARK_HOME="/opt/spark"
-export PATH="/home/christian/.sdkman/bin:$PATH"
+export PATH="$HOME/.sdkman/bin:$PATH"
 # Rust
-export PATH="/home/christian/.cargo/bin:${PATH}"
+export PATH="$HOME/.cargo/bin:${PATH}"
 source $HOME/.cargo/env
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
@@ -118,13 +113,14 @@ alias diff="diff --color=auto"
 alias ip="ip --color=auto"
 alias cdd="cd ../.."
 alias ihistory="history -i"
-alias cdw="cd ~/workspace"
-alias refresh="source ~/.zshrc"
+alias cdw="cd $HOME/workspace"
+alias refresh="source $HOME/.zshrc"
+alias py3="python3"
 # Replacement tools
 alias cat="batcat --pager=never"
 alias pcat="batcat --pager=never --style=plain"
 alias ll="eza -la"
-alias cdw="cd ~/workspace"
+alias cdw="cd $HOME/workspace"
 # git
 alias gs="git status"
 alias ga="git add -A"
@@ -132,13 +128,17 @@ alias gc="git commit"
 alias gca="git commit --amend --date=now"
 alias gum="git checkout master && git pull origin master"
 alias guma="git checkout main && git pull origin main"
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 # Convert a regular string to a snake_case
 function toSnakeCase(){
   echo "${1}" | awk '{print tolower($0)}' | sed 's/ /_/g'
 }
 # Servers
 export BIGIRON="bigiron.lan"
+################
+# External Tools
+################
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -147,5 +147,21 @@ eval "$(pyenv init -)"
 export PATH="$PATH:/opt/maven/bin"
 # Flink
 export PATH="$PATH:/opt/flink/latest/bin"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+# GCP
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.creds/google.json
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
