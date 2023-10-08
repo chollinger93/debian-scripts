@@ -129,7 +129,7 @@ function toSnakeCase(){
 # Servers
 export BIGIRON="bigiron.lan"
 # macOS
-export ICLOUD="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 ################
 # External Tools
