@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="codeberg-auto">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>dotfiles/home/bin/bin/pasta at 843b9ee13d949d346a4a73ccee2a99351aed285b - EvanHahn/dotfiles - Codeberg.org</title>
+	<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ29kZWJlcmcub3JnIiwic2hvcnRfbmFtZSI6IkNvZGViZXJnLm9yZyIsInN0YXJ0X3VybCI6Imh0dHBzOi8vY29kZWJlcmcub3JnLyIsImljb25zIjpbeyJzcmMiOiJodHRwczovL2NvZGViZXJnLm9yZy9hc3NldHMvaW1nL2xvZ28ucG5nIiwidHlwZSI6ImltYWdlL3BuZyIsInNpemVzIjoiNTEyeDUxMiJ9LHsic3JjIjoiaHR0cHM6Ly9jb2RlYmVyZy5vcmcvYXNzZXRzL2ltZy9sb2dvLnN2ZyIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwic2l6ZXMiOiI1MTJ4NTEyIn1dfQ==">
+	<meta name="author" content="EvanHahn">
+	<meta name="description" content="dotfiles">
+	<meta name="keywords" content="git,non-profit,foss,oss,free,software,open,source,code,hosting">
+	<meta name="referrer" content="no-referrer">
+
+
+	<link rel="alternate" type="application/atom+xml" title="" href="/EvanHahn/dotfiles.atom">
+	<link rel="alternate" type="application/rss+xml" title="" href="/EvanHahn/dotfiles.rss">
+
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/assets/img/favicon.png" type="image/png">
+	
+<script>
+	
+	window.addEventListener('error', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.addEventListener('unhandledrejection', function(e) {window._globalHandlerErrors=window._globalHandlerErrors||[]; window._globalHandlerErrors.push(e);});
+	window.config = {
+		appUrl: 'https:\/\/codeberg.org\/',
+		appSubUrl: '',
+		assetVersionEncoded: encodeURIComponent('13.0.0-dev-616-115078b7~gitea-1.22.0'), 
+		assetUrlPrefix: '\/assets',
+		runModeIsProd:  true ,
+		customEmojis: new Set(["git","gitea","codeberg","gitlab","github","gogs","forgejo"]),
+		csrfToken: 'QLFJwSkwpa0y6AXkAfVggGpgLes6MTc2MTUwNTk0OTY5NzYzMDYwOA',
+		pageData: {"DATETIMESTRINGS":{"FUTURE":"in future","NOW":"now","relativetime.1day":"yesterday","relativetime.1month":"last month","relativetime.1week":"last week","relativetime.1year":"last year","relativetime.2days":"two days ago","relativetime.2months":"two months ago","relativetime.2weeks":"two weeks ago","relativetime.2years":"two years ago"},"PLURALSTRINGS_FALLBACK":{},"PLURALSTRINGS_LANG":{"relativetime.days":["%d day ago","%d days ago"],"relativetime.hours":["%d hour ago","%d hours ago"],"relativetime.mins":["%d minute ago","%d minutes ago"],"relativetime.months":["%d month ago","%d months ago"],"relativetime.weeks":["%d week ago","%d weeks ago"],"relativetime.years":["%d year ago","%d years ago"]},"PLURAL_RULE_FALLBACK":0,"PLURAL_RULE_LANG":0},
+		notificationSettings: {"EventSourceUpdateTime":10000,"MaxTimeout":60000,"MinTimeout":10000,"TimeoutStep":10000}, 
+		enableTimeTracking:  true ,
+		
+		mermaidMaxSourceCharacters:  50000 ,
+		
+		i18n: {
+			copy_success: "Copied!",
+			copy_error: "Copy failed",
+			error_occurred: "An error occurred",
+			network_error: "Network error",
+			remove_label_str: "Remove item \"%s\"",
+			modal_confirm: "Confirm",
+			modal_cancel: "Cancel",
+			more_items: "More items",
+			incorrect_root_url: "This Forgejo instance is configured to be served on \"https://codeberg.org/\". You are currently viewing Forgejo through a different URL, which may cause parts of the application to break. The canonical URL is controlled by Forgejo admins via the ROOT_URL setting in the app.ini.",
+		},
+	};
+	
+	window.config.pageData = window.config.pageData || {};
+</script>
+<script src="/assets/js/webcomponents.js?v=13.0.0-dev-616-115078b7~gitea-1.22.0"></script>
+
+	
+
+	
+	<meta property="og:title" content="dotfiles/home/bin/bin/pasta at 843b9ee13d949d346a4a73ccee2a99351aed285b">
+
+
+	<meta property="og:url" content="https://codeberg.org//EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta">
+
+
+	<meta property="og:type" content="object">
+
+
+	<meta property="og:image" content="https://codeberg.org/EvanHahn/dotfiles/-/summary-card">
+	
+		<meta property="og:image:width" content="1200">
+	
+	
+		<meta property="og:image:height" content="600">
+	
+	
+		<meta property="og:image:alt" content="Summary card of repository EvanHahn/dotfiles">
+	
+
+<meta property="og:site_name" content="Codeberg.org">
+
+	<link rel="stylesheet" href="/assets/css/index.css?v=13.0.0-dev-616-115078b7~gitea-1.22.0">
+<link rel="stylesheet" href="/assets/css/theme-codeberg-auto.css?v=13.0.0-dev-616-115078b7~gitea-1.22.0">
+
+	
+</head>
+<body class="no-js" hx-headers='{"x-csrf-token": "QLFJwSkwpa0y6AXkAfVggGpgLes6MTc2MTUwNTk0OTY5NzYzMDYwOA"}' hx-swap="outerHTML" hx-ext="morph" hx-push-url="false">
+	
+
+	<div class="full height">
+		<noscript>
+			<div class="tw-ml-2 tw-mr-2 tw-text-center tw-text-text-light-2">This website requires JavaScript.</div>
+		</noscript>
+
+		
+
+		
+			
+
+
+<nav id="navbar" aria-label="Navigation bar">
+	<div class="navbar-left ui secondary menu">
+		
+		<a class="item" id="navbar-logo" href="/" aria-label="Home">
+			<img width="30" height="30" src="https://design.codeberg.org/logo-kit/icon_inverted.svg" aria-hidden="true">
+		</a>
+
+		
+		<div class="ui secondary menu item navbar-mobile-right only-mobile">
+			
+			<button class="item tw-w-auto ui icon mini button tw-p-2 tw-m-0" id="navbar-expand-toggle" aria-label="Toggle menu"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" aria-hidden="true" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75m0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75M1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5"/></svg></button>
+		</div>
+
+		
+		
+			<a class="item" href="/explore/repos">Explore</a>
+		
+
+		
+			<a class="item" target="_blank" href="https://docs.codeberg.org/getting-started/what-is-codeberg/#what-is-codeberg-e.v.%3F">About</a>
+			<a class="item" target="_blank" href="https://docs.codeberg.org/getting-started/faq/">FAQ</a>
+			<a class="item" target="_blank" rel="noopener noreferrer" href="https://docs.codeberg.org">Help</a>
+		
+
+		<a class="item donation-pretty" href="https://donate.codeberg.org">Donate</a>
+
+	</div>
+
+	
+	<div class="navbar-right ui secondary menu">
+		
+			
+				<a class="item" href="/user/sign_up">
+					<svg viewBox="0 0 16 16" class="tw-mr-1 svg octicon-person" aria-hidden="true" width="16" height="16"><path d="M10.561 8.073a6 6 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6 6 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0M10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0"/></svg>
+					<span>Register</span>
+				</a>
+			
+			<a class="item" rel="nofollow" href="/user/login?redirect_to=%2fEvanHahn%2fdotfiles%2fsrc%2fcommit%2f843b9ee13d949d346a4a73ccee2a99351aed285b%2fhome%2fbin%2fbin%2fpasta">
+				<svg viewBox="0 0 16 16" class="tw-mr-1 svg octicon-sign-in" aria-hidden="true" width="16" height="16"><path d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 2 13.25Zm6.56 4.5h5.69a.75.75 0 0 1 0 1.5H8.56l1.97 1.97a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L6.22 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734Z"/></svg>
+				<span>Sign in</span>
+			</a>
+		
+	</div>
+</nav>
+
+		
+
+
+
+<div role="main" aria-label="dotfiles/home/bin/bin/pasta at 843b9ee13d949d346a4a73ccee2a99351aed285b" class="page-content repository file list ">
+	<div class="secondary-nav">
+
+	<div class="ui container">
+		<div class="repo-header">
+			<div class="flex-item tw-items-center">
+				<div class="flex-item-leading">
+					
+
+	<svg viewBox="0 0 16 16" class="svg octicon-repo" aria-hidden="true" width="24" height="24"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.5 2.5 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.5 2.5 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.25.25 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+
+
+				</div>
+				<div class="flex-item-main">
+					<div class="flex-item-title gt-font-18">
+						<a class="muted gt-font-normal" href="/EvanHahn">EvanHahn</a>/<a class="muted" href="/EvanHahn/dotfiles">dotfiles</a>
+					</div>
+				</div>
+				<div class="flex-item-trailing">
+					
+					
+						
+					
+					
+					
+				</div>
+			</div>
+			
+				<div class="repo-buttons button-row">
+					
+					
+					
+					
+					<a class="ui compact small basic button" href="/EvanHahn/dotfiles.rss" data-tooltip-content="RSS feed">
+						<svg viewBox="0 0 16 16" class="svg octicon-rss" aria-hidden="true" width="16" height="16"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.5 10.5 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7 7 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.5 5.5 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489M2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/></svg>
+					</a>
+					
+					<form hx-boost="true" hx-target="this" method="post" action="/EvanHahn/dotfiles/action/watch">
+	<div class="ui labeled button" data-tooltip-content="Sign in to watch this repository.">
+		<button type="submit" class="ui compact small basic button" disabled>
+			
+				<svg viewBox="0 0 16 16" class="svg octicon-eye" aria-hidden="true" width="16" height="16"><path d="M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14s-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2M1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5s2.825-.742 3.955-1.715c1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5s-2.825.742-3.955 1.715c-1.124.967-1.954 2.096-2.366 2.717M8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10"/></svg><span class="text not-mobile">Watch</span>
+			
+		</button>
+		<a hx-boost="false" class="ui basic label" href="/EvanHahn/dotfiles/watchers">
+			3
+		</a>
+	</div>
+</form>
+
+					
+					<form hx-boost="true" hx-target="this" method="post" action="/EvanHahn/dotfiles/action/star">
+	<div class="ui labeled button" data-tooltip-content="Sign in to star this repository.">
+		<button type="submit" class="ui compact small basic button" disabled>
+			
+				<svg viewBox="0 0 16 16" class="svg octicon-star" aria-hidden="true" width="16" height="16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25m0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41z"/></svg><span class="text not-mobile">Star</span>
+			
+		</button>
+		<a hx-boost="false" class="ui basic label" href="/EvanHahn/dotfiles/stars">
+			29
+		</a>
+	</div>
+</form>
+
+					
+					
+					
+
+	<div class="ui labeled button
+		
+			disabled
+		"
+		
+			data-tooltip-content="Sign in to fork this repository."
+		
+	>
+		<a class="ui compact small basic button"
+			
+				
+			
+		>
+			<svg viewBox="0 0 16 16" class="svg octicon-repo-forked" aria-hidden="true" width="16" height="16"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0M5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0m6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0"/></svg><span class="text not-mobile">Fork</span>
+		</a>
+		<div class="ui small modal" id="fork-repo-modal">
+			<div class="header">
+				You've already forked dotfiles
+			</div>
+			<div class="content tw-text-left">
+				<div class="ui list">
+					
+				</div>
+				
+			</div>
+		</div>
+		<a class="ui basic label" href="/EvanHahn/dotfiles/forks">
+			3
+		</a>
+	</div>
+
+
+
+					
+					
+				</div>
+			
+		</div>
+		
+		
+		
+	</div>
+
+	<overflow-menu class="ui container secondary pointing tabular top attached borderless menu tw-pt-0 tw-my-0">
+		
+			<div class="overflow-menu-items">
+				
+					<a class="active item" href="/EvanHahn/dotfiles">
+						<svg viewBox="0 0 16 16" class="svg octicon-code" aria-hidden="true" width="16" height="16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215m-6.56 0a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></svg> Code
+					</a>
+				
+
+				
+					<a class="item" href="/EvanHahn/dotfiles/issues">
+						<svg viewBox="0 0 16 16" class="svg octicon-issue-opened" aria-hidden="true" width="16" height="16"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0"/></svg> Issues
+						
+					</a>
+				
+
+				
+
+				
+					<a class="item" href="/EvanHahn/dotfiles/pulls">
+						<svg viewBox="0 0 16 16" class="svg octicon-git-pull-request" aria-hidden="true" width="16" height="16"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25m5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354M3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0"/></svg> Pull requests
+						
+							<span class="ui small label">1</span>
+						
+					</a>
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+					<a class="item" href="/EvanHahn/dotfiles/activity">
+						<svg viewBox="0 0 16 16" class="svg octicon-pulse" aria-hidden="true" width="16" height="16"><path d="M6 2c.306 0 .582.187.696.471L10 10.731l1.304-3.26A.75.75 0 0 1 12 7h3.25a.75.75 0 0 1 0 1.5h-2.742l-1.812 4.528a.751.751 0 0 1-1.392 0L6 4.77 4.696 8.03A.75.75 0 0 1 4 8.5H.75a.75.75 0 0 1 0-1.5h2.742l1.812-4.529A.75.75 0 0 1 6 2"/></svg> Activity
+					</a>
+				
+
+				
+
+				
+
+				
+
+				
+			</div>
+		
+	</overflow-menu>
+	<div class="ui tabs divider"></div>
+</div>
+
+	<div class="ui container ">
+		
+
+
+
+
+	<div id="flash-message" hx-swap-oob="true"></div>
+
+
+		
+		
+
+		
+		
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+		
+		
+
+		
+		
+		
+		<div class="repo-button-row">
+			<div class="tw-gap-y-2 button-sequence">
+				
+
+
+
+
+
+
+	
+
+
+
+
+<script type="module">
+	const data = {
+		'textReleaseCompare': "Compare",
+		'textCreateTag': "Create tag %s",
+		'textCreateBranch': "Create branch %s",
+		'textCreateBranchFrom': "from \"%s\"",
+		'textBranches': "Branches",
+		'textTags': "Tags",
+		'textDefaultBranchLabel': "default",
+
+		'mode': 'branches',
+		'showBranchesInDropdown':  true ,
+		'searchFieldPlaceholder': 'Filter branch or tag...',
+		'branchForm':  null ,
+		'disableCreateBranch':  true ,
+		'setAction':  null ,
+		'submitForm':  null ,
+		'viewType': "tree",
+		'refName': "843b9ee13d",
+		'commitIdShort': "843b9ee13d",
+		'tagName': "",
+		'branchName': "main",
+		'noTag':  null ,
+		'defaultSelectedRefName': "main",
+		'repoDefaultBranch': "main",
+		'enableFeed':  true ,
+		'rssURLPrefix': '\/EvanHahn\/dotfiles/rss/branch/',
+		'branchURLPrefix': '\/EvanHahn\/dotfiles/src/branch/',
+		'branchURLSuffix': '/home\/bin\/bin\/pasta',
+		'tagURLPrefix': '\/EvanHahn\/dotfiles/src/tag/',
+		'tagURLSuffix': '/home\/bin\/bin\/pasta',
+		'repoLink': "/EvanHahn/dotfiles",
+		'treePath': "home/bin/bin/pasta",
+		'branchNameSubURL': "commit/843b9ee13d949d346a4a73ccee2a99351aed285b",
+		'noResults': "No results found.",
+	};
+	
+	window.config.pageData.branchDropdownDataList = window.config.pageData.branchDropdownDataList || [];
+	window.config.pageData.branchDropdownDataList.push(data);
+</script>
+
+<div class="js-branch-tag-selector ">
+	
+	<div class="ui dropdown custom">
+		<button class="branch-dropdown-button gt-ellipsis ui basic small compact button tw-flex tw-m-0">
+			<span class="text tw-flex tw-items-center tw-mr-1 gt-ellipsis">
+				
+					
+						<svg viewBox="0 0 16 16" class="svg octicon-git-commit" aria-hidden="true" width="16" height="16"><path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0"/></svg>
+					
+					<strong ref="dropdownRefName" class="tw-ml-2 tw-inline-block gt-ellipsis">843b9ee13d</strong>
+				
+			</span>
+			<svg viewBox="0 0 16 16" class="dropdown icon svg octicon-triangle-down" aria-hidden="true" width="14" height="14"><path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427"/></svg>
+		</button>
+	</div>
+</div>
+
+				
+				
+				
+
+				
+
+				
+				
+					<span class="breadcrumb repo-path tw-ml-1">
+						<a class="section" href="/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b" title="dotfiles">dotfiles</a><span class="breadcrumb-divider">/</span><span class="section"><a href="/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home" title="home">home</a></span><span class="breadcrumb-divider">/</span><span class="section"><a href="/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin" title="bin">bin</a></span><span class="breadcrumb-divider">/</span><span class="section"><a href="/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin" title="bin">bin</a></span><span class="breadcrumb-divider">/</span><span class="active section" title="pasta">pasta</span>
+								<button class="btn interact-fg tw-p-2" data-clipboard-text="home/bin/bin/pasta" data-tooltip-content="Copy path"><svg viewBox="0 0 16 16" class="svg octicon-copy" aria-hidden="true" width="14" height="14"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg></button></span>
+				
+			</div>
+			<div class="tw-flex tw-items-center">
+				
+				
+				
+			</div>
+		</div>
+
+		
+
+		
+
+
+		
+			<div class="tab-size-4 non-diff-file-content">
+
+	
+		<div id="repo-file-commit-box" class="ui segment list-header tw-mb-4 tw-flex tw-justify-between">
+			<div class="latest-commit">
+				
+	
+		<img loading="lazy" alt="" class="ui avatar tw-align-middle tw-mr-2" src="/avatars/3abd693973c29217b7a3792c594cf1406fe7901b8a13625434fcfa7287bc5737?size=48" title="Evan Hahn" width="24" height="24"/>
+		
+			<a class="muted author-wrapper" title="Evan Hahn" href="/EvanHahn"><strong>Evan Hahn</strong></a>
+		
+	
+	
+
+	
+	
+
+<a href="/EvanHahn/dotfiles/commit/598238595cd9859e406d7b7224d33f14dca36da2" rel="nofollow" class="sha label isSigned">
+	<span class="shortsha">598238595c</span><div class="signature">
+	
+		<span title="No known key found for this signature in database"><svg viewBox="0 0 14 16" class="svg gitea-unlock" aria-hidden="true" width="16" height="16"><path d="M12.5 8H4.75V4.778c0-1.237.99-2.265 2.228-2.278A2.253 2.253 0 0 1 9.25 4.75v.5c0 .416.334.75.75.75h1c.416 0 .75-.334.75-.75v-.5c0-2.625-2.14-4.76-4.766-4.75C4.36.01 2.25 2.172 2.25 4.797V8H1.5A1.5 1.5 0 0 0 0 9.5v5A1.5 1.5 0 0 0 1.5 16h11a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 12.5 8"/></svg></span>
+	
+</div>
+</a>
+
+	
+
+	
+	<span class="grey commit-summary" title="bins: use `exec` to replace the current process instead of being part of bash"><span class="message-wrapper"><a href="/EvanHahn/dotfiles/commit/598238595cd9859e406d7b7224d33f14dca36da2" class="default-link muted">bins: use <code class="inline-code-block">exec</code> to replace the current process instead of being part of bash</a></span>
+		
+	</span>
+
+
+			</div>
+			
+				
+					<div class="text grey age">
+						<relative-time prefix="" tense="past" datetime="2021-04-11T11:40:18-05:00" data-tooltip-content data-tooltip-interactive="true">2021-04-11 11:40:18 -05:00</relative-time>
+					</div>
+				
+			
+		</div>
+	
+
+	<h4 class="file-header ui top attached header tw-flex tw-items-center tw-justify-between tw-flex-wrap">
+		<div class="file-header-left tw-flex tw-items-center tw-py-2 tw-pr-4">
+			
+				<div class="file-info tw-font-mono">
+	
+	
+		<div class="file-info-entry">
+			13 lines
+		</div>
+	
+	
+	
+		<div class="file-info-entry">
+			234 B
+		</div>
+	
+	
+	
+		<div class="file-info-entry">
+			Bash
+		</div>
+	
+	
+		<div class="file-info-entry">
+			Executable file
+		</div>
+	
+	
+	
+	
+</div>
+
+			
+		</div>
+		<div class="file-header-right file-actions tw-flex tw-items-center tw-flex-wrap">
+			
+			
+				<div class="ui buttons tw-mr-1">
+					
+					<a class="ui mini basic button" href="/EvanHahn/dotfiles/raw/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta">Raw</a>
+					
+					
+						<a class="ui mini basic button" href="/EvanHahn/dotfiles/blame/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta">Blame</a>
+					
+					<a class="ui mini basic button" href="/EvanHahn/dotfiles/commits/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta">History</a>
+					
+				</div>
+				<a download class="btn-octicon" href="/EvanHahn/dotfiles/raw/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta" data-tooltip-content="Download file">
+					<svg viewBox="0 0 16 16" class="svg octicon-download" aria-hidden="true" width="16" height="16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06z"/></svg>
+				</a>
+				<a href="#" id="copy-content" class="btn-octicon " data-tooltip-content="Copy content">
+					<svg viewBox="0 0 16 16" class="svg octicon-copy" aria-hidden="true" width="14" height="14"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg>
+				</a>
+				
+					
+						<span class="btn-octicon disabled" data-tooltip-content="You must be on a branch to have an RSS feed.">
+							<svg viewBox="0 0 16 16" class="svg octicon-rss" aria-hidden="true" width="14" height="14"><path d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.5 10.5 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7 7 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.5 5.5 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489M2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/></svg>
+						</span>
+					
+				
+				
+					
+						<span class="btn-octicon disabled" data-tooltip-content="You must be on a branch to make or propose changes to this file.">
+							<svg viewBox="0 0 16 16" class="svg octicon-pencil" aria-hidden="true" width="16" height="16"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.25.25 0 0 0-.064.108l-.558 1.953 1.953-.558a.25.25 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"/></svg>
+						</span>
+					
+					
+						<span class="btn-octicon disabled" data-tooltip-content="You must be on a branch to make or propose changes to this file.">
+							<svg viewBox="0 0 16 16" class="svg octicon-trash" aria-hidden="true" width="16" height="16"><path d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75M4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.75 1.75 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15M6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25"/></svg>
+						</span>
+					
+				
+			
+			
+		</div>
+	</h4>
+	<div class="ui bottom attached table unstackable segment">
+		
+			
+	
+
+
+		
+		<div class="file-view code-view">
+			
+				
+				<table>
+					<tbody>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L1" data-line-number="1"></span></td>
+							
+							<td rel="L1" class="lines-code chroma"><code class="code-inner"><span class="cp">#!/usr/bin/env bash
+</span></code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L2" data-line-number="2"></span></td>
+							
+							<td rel="L2" class="lines-code chroma"><code class="code-inner"><span class="cp"></span><span class="nb">set</span> -e
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L3" data-line-number="3"></span></td>
+							
+							<td rel="L3" class="lines-code chroma"><code class="code-inner"><span class="nb">set</span> -u
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L4" data-line-number="4"></span></td>
+							
+							<td rel="L4" class="lines-code chroma"><code class="code-inner">
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L5" data-line-number="5"></span></td>
+							
+							<td rel="L5" class="lines-code chroma"><code class="code-inner"><span class="k">if</span> <span class="nb">hash</span> pbpaste 2&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L6" data-line-number="6"></span></td>
+							
+							<td rel="L6" class="lines-code chroma"><code class="code-inner">  <span class="nb">exec</span> pbpaste
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L7" data-line-number="7"></span></td>
+							
+							<td rel="L7" class="lines-code chroma"><code class="code-inner"><span class="k">elif</span> <span class="nb">hash</span> xclip 2&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L8" data-line-number="8"></span></td>
+							
+							<td rel="L8" class="lines-code chroma"><code class="code-inner">  <span class="nb">exec</span> xclip -selection clipboard -o
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L9" data-line-number="9"></span></td>
+							
+							<td rel="L9" class="lines-code chroma"><code class="code-inner"><span class="k">elif</span> <span class="o">[</span><span class="o">[</span> -e /tmp/clipboard <span class="o">]</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L10" data-line-number="10"></span></td>
+							
+							<td rel="L10" class="lines-code chroma"><code class="code-inner">  <span class="nb">exec</span> cat /tmp/clipboard
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L11" data-line-number="11"></span></td>
+							
+							<td rel="L11" class="lines-code chroma"><code class="code-inner"><span class="k">else</span>
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L12" data-line-number="12"></span></td>
+							
+							<td rel="L12" class="lines-code chroma"><code class="code-inner">  <span class="nb">echo</span> <span class="s1">&#39;&#39;</span>
+</code></td>
+						</tr>
+						
+						
+						<tr>
+							<td class="lines-num"><span id="L13" data-line-number="13"></span></td>
+							
+							<td rel="L13" class="lines-code chroma"><code class="code-inner"><span class="k">fi</span>
+</code></td>
+						</tr>
+						
+					</tbody>
+				</table>
+				<div class="code-line-menu tippy-target">
+					
+						<a class="item ref-in-new-issue" role="menuitem" data-url-issue-new="/EvanHahn/dotfiles/issues/new" data-url-param-body-link="/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta" rel="nofollow noindex">Reference in a new issue</a>
+					
+					<a class="item view_git_blame" role="menuitem" href="/EvanHahn/dotfiles/blame/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta">View git blame</a>
+					<a class="item copy-line-permalink" role="menuitem" data-url="/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/pasta">Copy permalink</a>
+				</div>
+				
+			
+		</div>
+	</div>
+</div>
+
+		
+	</div>
+</div>
+
+
+	
+
+	</div>
+
+	
+
+	<footer class="page-footer" role="group" aria-label="Footer">
+	<div class="grid" aria-label="Links">
+		<div class="not-mobile">
+			<div class="branding" aria-hidden="true">
+				<img src="https://design.codeberg.org/logo-kit/icon_inverted.svg" alt="Logo">
+			</div>
+			<div class="powered-by">
+				<div class="title">Powered by</div>
+				<p class="tw-mb-0">
+					<a target="_blank" rel="noopener noreferrer" href="https://forgejo.org" aria-label="Forgejo">
+						<img class="light-logo" loading="lazy" src="/assets/img/svg/forgejo-wordmark.svg" alt="Forgejo logo">
+						<img class="dark-logo" loading="lazy" src="/assets/img/svg/forgejo-wordmark-mono.svg" alt="Forgejo logo">
+					</a>
+				</p>
+				with <a class="tw-mt-0" href="/Codeberg-Infrastructure/forgejo" target="_blank">modifications</a>
+			</div>
+		</div>
+		<div>
+			<b id="codeberg-codeberg">Codeberg</b>
+			<ul>
+				<a href="https://blog.codeberg.org" target="_blank">Blog</a>
+				<li><a href="https://docs.codeberg.org" target="_blank">Documentation</a></li>
+				<li><a href="/Codeberg/Community/issues">Community Issues</a></li>
+				
+				<li><a href="/Codeberg/Contributing">Contributing</a>
+				<li><a href="https://docs.codeberg.org/contact/#abuse" target="_blank">Report Abuse</a>
+			</ul>
+		</div>
+		<div>
+			<b id="codeberg-association">Association</b>
+			<ul>
+				<li><a href="https://docs.codeberg.org/getting-started/what-is-codeberg/#what-is-codeberg-e.v.%3F" target="_blank">Who are we?</a></li>
+				<li><a href="/codeberg/org/src/en/bylaws.md" target="_blank">Bylaws / Satzung</a></li>
+				<li><a href="https://docs.codeberg.org/improving-codeberg/donate/" target="_blank">Donate</a></li>
+				<li><a href="https://join.codeberg.org" target="_blank">Join / Support</a></li>
+				<li><a href="https://docs.codeberg.org/contact/" target="_blank">Contact</a></li>
+			</ul>
+		</div>
+		<div>
+			<b id="codeberg-service">Services</b>
+			<ul>
+				<li><a href="https://codeberg.page" target="_blank">Codeberg Pages</a></li>
+				<li><a href="https://translate.codeberg.org" target="_blank">Codeberg Translate</a></li>
+				<li><a href="https://docs.codeberg.org/ci/#using-codeberg's-instance-of-woodpecker-ci" target="_blank">Woodpecker CI</a></li>
+				
+					<li><a href="/api/swagger">Forgejo API</a></li>
+				
+				<li><a href="https://status.codeberg.eu" target="_blank">Status Page</a></li>
+			</ul>
+		</div>
+		<div>
+			<b id="codeberg-legal">Legal</b>
+			<ul>
+				<li><a href="/codeberg/org/src/Imprint.md" target="_blank">Imprint / Impressum</a></li>
+				<li><a href="/codeberg/org/src/PrivacyPolicy.md" target="_blank">Privacy Policy</a></li>
+				<li><a href="/assets/licenses.txt">Licenses</a></li>
+				<li><a href="/codeberg/org/src/TermsOfUse.md">Terms of Use</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-bottom-grid">
+		<div class="footer-social">
+			<a href="https://social.anoxinon.de/@Codeberg" target="_blank" rel="noopener noreferrer">Mastodon</a> |
+			<a href="matrix:r/codeberg-space:matrix.org?action=join" target="_blank" rel="noopener noreferrer">Matrix Space</a>
+			<a href="https://matrix.to/#/#codeberg-space:matrix.org" target="_blank" rel="noopener noreferrer">(Web link)</a>
+			<button class="btn interact-fg tw-p-2" data-clipboard-text="#codeberg-space:matrix.org" data-tooltip-content="Copy to clipboard"><svg viewBox="0 0 16 16" class="svg octicon-copy" aria-hidden="true" width="14" height="14"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></svg></button>
+			<p class="only-mobile">
+				<a target="_blank" rel="noopener noreferrer" href="https://forgejo.org">Powered by Forgejo</a>
+			</p>
+		</div>
+		<div class="footer-language-switch">
+			<div class="ui language bottom floating slide up dropdown link item button">
+				<svg viewBox="0 0 16 16" class="svg octicon-globe" aria-hidden="true" width="16" height="16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M5.78 8.75a9.64 9.64 0 0 0 1.363 4.177q.383.64.857 1.215c.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a10 10 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.51 6.51 0 0 0 4.666 5.5q-.184-.271-.352-.552c-.715-1.192-1.437-2.874-1.581-4.948m-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948q.18-.295.353-.552a6.51 6.51 0 0 0-4.666 5.5m10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948q-.18.296-.353.552a6.51 6.51 0 0 0 4.666-5.5Zm2.733-1.5a6.51 6.51 0 0 0-4.666-5.5q.184.272.353.552c.714 1.192 1.436 2.874 1.58 4.948Z"/></svg>
+				<div class="text">English</div>
+				<div class="menu language-menu">
+					
+						<a lang="id-ID" data-url="/?lang=id-ID" class="item ">Bahasa Indonesia</a>
+					
+						<a lang="da" data-url="/?lang=da" class="item ">Dansk</a>
+					
+						<a lang="de-DE" data-url="/?lang=de-DE" class="item ">Deutsch</a>
+					
+						<a lang="en-US" data-url="/?lang=en-US" class="item active selected">English</a>
+					
+						<a lang="es-ES" data-url="/?lang=es-ES" class="item ">Español</a>
+					
+						<a lang="eo" data-url="/?lang=eo" class="item ">Esperanto</a>
+					
+						<a lang="fil" data-url="/?lang=fil" class="item ">Filipino</a>
+					
+						<a lang="fr-FR" data-url="/?lang=fr-FR" class="item ">Français</a>
+					
+						<a lang="it-IT" data-url="/?lang=it-IT" class="item ">Italiano</a>
+					
+						<a lang="lv-LV" data-url="/?lang=lv-LV" class="item ">Latviešu</a>
+					
+						<a lang="hu-HU" data-url="/?lang=hu-HU" class="item ">Magyar nyelv</a>
+					
+						<a lang="nl-NL" data-url="/?lang=nl-NL" class="item ">Nederlands</a>
+					
+						<a lang="nds" data-url="/?lang=nds" class="item ">Plattdüütsch</a>
+					
+						<a lang="pl-PL" data-url="/?lang=pl-PL" class="item ">Polski</a>
+					
+						<a lang="pt-PT" data-url="/?lang=pt-PT" class="item ">Português de Portugal</a>
+					
+						<a lang="pt-BR" data-url="/?lang=pt-BR" class="item ">Português do Brasil</a>
+					
+						<a lang="sl" data-url="/?lang=sl" class="item ">Slovenščina</a>
+					
+						<a lang="fi-FI" data-url="/?lang=fi-FI" class="item ">Suomi</a>
+					
+						<a lang="sv-SE" data-url="/?lang=sv-SE" class="item ">Svenska</a>
+					
+						<a lang="tr-TR" data-url="/?lang=tr-TR" class="item ">Türkçe</a>
+					
+						<a lang="cs-CZ" data-url="/?lang=cs-CZ" class="item ">Čeština</a>
+					
+						<a lang="el-GR" data-url="/?lang=el-GR" class="item ">Ελληνικά</a>
+					
+						<a lang="bg" data-url="/?lang=bg" class="item ">Български</a>
+					
+						<a lang="ru-RU" data-url="/?lang=ru-RU" class="item ">Русский</a>
+					
+						<a lang="uk-UA" data-url="/?lang=uk-UA" class="item ">Українська</a>
+					
+						<a lang="fa-IR" data-url="/?lang=fa-IR" class="item ">فارسی</a>
+					
+						<a lang="ja-JP" data-url="/?lang=ja-JP" class="item ">日本語</a>
+					
+						<a lang="zh-CN" data-url="/?lang=zh-CN" class="item ">简体中文</a>
+					
+						<a lang="zh-TW" data-url="/?lang=zh-TW" class="item ">繁體中文（台灣）</a>
+					
+						<a lang="zh-HK" data-url="/?lang=zh-HK" class="item ">繁體中文（香港）</a>
+					
+						<a lang="ko-KR" data-url="/?lang=ko-KR" class="item ">한국어</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tw-hidden">
+		
+			Page: 43ms<br>
+			Template: 3ms
+		
+	</div>
+    
+	
+		<div class="symbol-of-tolerance" role="img"></div>
+	
+</footer>
+
+
+	<script src="/assets/js/index.js?v=13.0.0-dev-616-115078b7~gitea-1.22.0" onerror="alert('Failed to load asset files from {path}. Please make sure the asset files can be accessed.'.replace('{path}', this.src))"></script>
+
+	
+</body>
+</html>
+
