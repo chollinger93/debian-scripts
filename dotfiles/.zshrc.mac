@@ -104,6 +104,7 @@ export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # macOS
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+export OBSIDIAN_HOME="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"
 # .NET
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$HOME/.dotnet
@@ -128,6 +129,7 @@ alias pcat="bat --pager=never --style=plain"
 alias ll="eza -la"
 alias cdw="cd $HOME/workspace"
 alias cdw="cd $HOME/workspace"
+alias cpv='rsync -ah --progress'
 # git
 alias gs="git status"
 alias ga="git add -A"

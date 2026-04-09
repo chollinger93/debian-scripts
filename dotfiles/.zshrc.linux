@@ -124,6 +124,7 @@ alias cat="batcat --pager=never"
 alias pcat="batcat --pager=never --style=plain"
 alias ll="eza -la"
 alias cdw="cd $HOME/workspace"
+alias cpv='rsync -ah --progress'
 # git
 alias gs="git status"
 alias ga="git add -A"
