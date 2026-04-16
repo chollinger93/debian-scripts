@@ -138,7 +138,11 @@ alias guma="git checkout main && git pull origin main"
 function toSnakeCase() {
   echo "${1}" | awk '{print tolower($0)}' | sed 's/ /_/g'
 }
-
+function bigFiles() {
+  dir="${1:-.}"
+  maxFiles="${2:-20}"
+  du -ah "$dir" | sort -rh | head -n "$maxFiles"
+}
 ################
 # External scripts
 # https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/

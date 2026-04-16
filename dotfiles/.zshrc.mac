@@ -143,6 +143,11 @@ alias guma="git checkout main && git pull origin main"
 function toSnakeCase() {
   echo "${1}" | awk '{print tolower($0)}' | sed 's/ /_/g'
 }
+function bigFiles() {
+  dir="${1:-.}"
+  maxFiles="${2:-20}"
+  du -ah "$dir" | sort -rh | head -n "$maxFiles"
+}
 # macOS specific
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 alias unzip="/opt/homebrew/opt/unzip/bin/unzip"
