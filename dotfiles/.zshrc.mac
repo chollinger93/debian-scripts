@@ -139,6 +139,8 @@ alias gpf="git push --force-with-lease"
 alias gca="git commit --amend --date=now"
 alias gum="git checkout master && git pull origin master"
 alias guma="git checkout main && git pull origin main"
+# Don't question the naming schema - it's muscle memory
+alias duma="git checkout dev && git pull origin dev"
 # Convert a regular string to a snake_case
 function toSnakeCase() {
   echo "${1}" | awk '{print tolower($0)}' | sed 's/ /_/g'
