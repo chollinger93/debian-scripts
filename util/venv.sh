@@ -10,7 +10,7 @@ if [[ "${VIRTUAL_ENV}" != "" ]]; then
     else
 	logWarn "No venv found"
 	return 1
-fi	
+fi
 }
 
 check_create_venv(){
@@ -38,4 +38,3 @@ check_create_venv(){
     fi
     return 0
 }
-

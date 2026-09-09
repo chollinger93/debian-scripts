@@ -17,5 +17,5 @@ createTestBadge(){
         anybadge -o --label=pytest --value=pass --file=$out pass=green fail=red
     else
         anybadge -o --label=pytest --value=fail --file=$out pass=green fail=red
-    fi 
+    fi
 }

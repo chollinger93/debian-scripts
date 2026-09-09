@@ -3,7 +3,7 @@
 generateFile() {
     local threshold=$1
     logWarn "Starting thread, will create $threshold files"
-    for ((i=0; i<=threshold; i++)); do 
+    for ((i=0; i<=threshold; i++)); do
         rPath="${ROOT_DIR}${RANDOM}/"
         rFile="${RANDOM}"
         rFileSize=$(( RANDOM + 1024 ))
@@ -31,11 +31,11 @@ THRES_PER_LOOP=$(($THRESHOLD / $NUM_CPUS))
 for ((i=0; i<=NUM_CPUS; i++)); do
     generateFile $THRES_PER_LOOP &
 done
-# Start remainder 
+# Start remainder
 generateFile $(($THRESHOLD - $(($THRES_PER_LOOP * $NUM_CPUS)))) &
 
 # Wait for all
-wait 
+wait
 # Check
 total_size=$(du -hs $ROOT_DIR | cut -d'/' -f1)
 num_files=$(find $ROOT_DIR -type f | wc -l)

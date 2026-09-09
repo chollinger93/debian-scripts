@@ -35,7 +35,7 @@ log "https://github.com/ytdl-org/youtube-dl/blob/master/README.md#how-do-i-updat
 if [[ $(id -u) -ne 0 ]]; then
 	logWarn "Can't run youtube-dl update, you are not root - and probably shouldn't be. Please try:"
 	logWarn "sudo youtube-dl -U"
-else 
+else
 	youtube-dl -U
 	if [[ $? -ne 0 ]]; then
 		logWarn "Couldn't update youtube-dl"

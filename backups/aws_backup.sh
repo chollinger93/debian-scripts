@@ -30,4 +30,3 @@ duplicity --full-if-older-than 7D --encrypt-key=${GPG_KEY} --sign-key=${GPG_KEY}
 export PASSPHRASE=
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
-

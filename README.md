@@ -48,7 +48,7 @@ Customized script of the `borg` [docs](https://borgbackup.readthedocs.io/en/stab
 
 Setup:
 ```
-sudo apt-get install borgbackup 
+sudo apt-get install borgbackup
 borg init user@server:22/path/to/backup -e=repokey
 borg key export user@server:22/path/to/backup ~/borg.key
 chmod 400 ~/borg.key
@@ -173,4 +173,3 @@ Proudly written with vim
 
 ## License
 [MIT](./LICENSE.md)
- 

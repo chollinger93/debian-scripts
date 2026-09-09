@@ -31,7 +31,7 @@ if [[ -z $(mount -t cifs | grep "${SHARE}") ]]; then
 else
 	echo "Disk available, continuing..."
 fi
-		      
+
 # Make the regular backup
 # Will be a full backup if past the older-than parameter
 mkdir -p "${MOUNT_PATH}/backups/arch/"

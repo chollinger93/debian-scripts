@@ -9,7 +9,7 @@ BLUE='\033[0;34m'
 
 logErr(){
 	local msg="$(date): ${1}"
-	>&2 echo -e "${RED}${msg}${DEF}" 
+	>&2 echo -e "${RED}${msg}${DEF}"
 }
 
 logWarn(){

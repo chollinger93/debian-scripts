@@ -1,22 +1,22 @@
-#/bin/bash
+#!/bin/bash
 
 COLS=
-parseInput(){
-	
+parseInput() {
+
 	local col="${1}"
 	local type=$(echo "${2}" | awk '{print tolower($0)}')
-	
+
 }
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 source "${DIR}/logging.sh"
 
 if [[ $# -ge 2 ]]; then
-    THRESHOLD=$1
-    OUTPATH="${2}"
+	THRESHOLD=$1
+	OUTPATH="${2}"
 else
-    logErr "Arguments: \$threshold \$outpath"
-    exit 1
+	logErr "Arguments: \$threshold \$outpath"
+	exit 1
 fi
 
 # Parse columns
@@ -26,7 +26,7 @@ while ! [ "${col}" == "n" ]; do
 	log "Please enter a column as <name,type>, whereas type should be either \"string\" or \"number\". Once you are done, type 'n'"
 	read col
 	if ! [ "${col}" == "n" ]; then
-		cols+=( "${col}" )
+		cols+=("${col}")
 	fi
 done
 
@@ -40,7 +40,7 @@ for i in $(seq 1 $THRESHOLD); do
 		# header
 		if [ "${i}" == "1" ]; then
 			header=$(echo "${header},${col}")
-			echo "${header}" > "${OUTPATH}"
+			echo "${header}" >"${OUTPATH}"
 		fi
 		# data
 		if [ "${ttype}" == "string" ]; then
@@ -56,7 +56,7 @@ for i in $(seq 1 $THRESHOLD); do
 		# Add col
 		line=$(echo "${line},${rcol}")
 	done
-	echo "${line}" >> "${OUTPATH}"
+	echo "${line}" >>"${OUTPATH}"
 done
 
 log "Done, wrote to ${OUTPATH}"

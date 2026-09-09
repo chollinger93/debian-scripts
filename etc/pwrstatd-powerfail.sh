@@ -7,7 +7,7 @@ export SENDER_ADDRESS
 
 #
 # If you want to receive event notification by e-mail, you must change 'ENABLE_EMAIL' item to 'yes'.
-# Note: After change 'ENABLE_EMAIL' item, you must asign 'RECEIPT_NAME', 'RECEIPT_ADDRESS', and 
+# Note: After change 'ENABLE_EMAIL' item, you must asign 'RECEIPT_NAME', 'RECEIPT_ADDRESS', and
 # 'SENDER_ADDRESS' three items as below for the correct information.
 #
 
@@ -35,6 +35,5 @@ STATIC_MOUNT_REGEX="usb$"
 mountedDrives=$(cat /proc/mounts  | grep mnt | cut -d' ' -f2 | egrep -v "${STATIC_MOUNT_REGEX}")
 while IFS= read -r dr; do
     echo "Removing ${dr}!"
-    umount "${dr}" 
+    umount "${dr}"
 done <<< "$mountedDrives"
-
